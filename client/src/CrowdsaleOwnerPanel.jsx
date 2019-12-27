@@ -25,7 +25,7 @@ class CrowdsaleOwnerPanel extends React.Component{
         this.state = {
             web3: props.web3,
             crowdsaleInstance: null,
-            crowdsaleAddress: "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B",
+            crowdsaleAddress: "",
             accounts: props.accounts,
             currentRate: 0,
             newRate: 0,
@@ -36,7 +36,7 @@ class CrowdsaleOwnerPanel extends React.Component{
         }
 
 
-        this.crowdsaleAddress = "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb"
+        this.crowdsaleAddress = "0xe982E462b094850F12AF94d21D470e21bE9D0E9C"
         //Mainnet
         //this.crowdsaleAddress = "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B"
 

@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@material-ui/core/Checkbox';
+import InputAdornment from '@material-ui/core/InputAdornment';
+
 
 import CircularProgress from '@material-ui/core/CircularProgress';
 import LockIcon from '@material-ui/icons/Lock';
@@ -57,7 +59,7 @@ class StakingForm extends Component{
             tokenInstance: props.tokenInstance,
             tokenDecimals: props.tokenDecimals,
             stakingAddress: props.stakingAddress,
-            amountToStake: 0,
+            amountToStake: 100,
             timeToLock: 0,
             showReferralInput: false,
             hasReferral: false,
@@ -254,12 +256,16 @@ class StakingForm extends Component{
                 >
                     <Grid item>
                         <TextField
+                                type="number"
+                                required
                                 label={<Trans i18nKey="staking_form.textBoxHelper" />}
                                 margin="normal"
                                 variant="outlined" 
                                 onChange={this.handleAmountChange}
                                 value={this.state.amountToStake}  
                                 autoFocus 
+                                inputProps={{ min: "100", max: "100000", step: "1" }}
+
                         />
                     </Grid>
 

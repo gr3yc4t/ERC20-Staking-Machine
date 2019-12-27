@@ -1,8 +1,5 @@
 import React, { Component } from "react";
-import getWeb3 from "./utils/getWeb3";
 
-
-import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import TextField from '@material-ui/core/TextField';
@@ -38,6 +35,7 @@ class StakeInfo extends Component{
             viewAmount: 0,
             referral: props.referral,
             amountStaked: props.amountStaked,
+            numberOfStake: props.stakeNumber,
             tokenDecimals: props.tokenDecimals,
             hasReferral: true
         }
@@ -99,7 +97,7 @@ class StakeInfo extends Component{
             elevation={4}
             className={classes.box}>
                     <Typography variant="body1" component="p"><Trans i18nKey="account_info.totalAmount" />: <b>{this.state.viewAmount}</b></Typography>
-                    <Typography variant="body1" component="p"><Trans i18nKey="account_info.numberOfActiveStake" />: <b>{this.props.stakeNumber}</b></Typography>
+                    <Typography variant="body1" component="p"><Trans i18nKey="account_info.numberOfActiveStake" />: <b>{this.state.numberOfStake}</b></Typography>
                     <Typography variant="body1" component="p">
                         <Trans i18nKey="account_info.noReferralPresent" />: 
                             {this.state.hasReferral ? (

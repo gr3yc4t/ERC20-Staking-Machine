@@ -78,7 +78,7 @@ class App extends Component {
 
 
 
-    this.stakingAddress = "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550"
+    this.stakingAddress = "0x9561C133DD8580860B6b7E504bC5Aa500f0f06a7"
     //Mainnet
     //this.stakingAddress = "0xE57F6A57d2741707A6749132695DD71E49B93638"
 

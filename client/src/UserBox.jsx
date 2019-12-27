@@ -29,6 +29,7 @@ import HowToVoteIcon from '@material-ui/icons/HowToVote';
 import CardGiftcardIcon from '@material-ui/icons/CardGiftcard';
 import FormatListBulletedIcon from '@material-ui/icons/FormatListBulleted';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import HomeIcon from '@material-ui/icons/Home';
 
 import { Trans } from "react-i18next";
 
@@ -155,6 +156,10 @@ class UserBox extends Component{
                                 <Avatar alt="logo" src="https://www.bitcoincompany.it/wp-content/uploads/2019/08/BITN-Token-RGB-256x256.png" style={{margin:10}} />
                                 <ListItemText primary={"Staking Machine"} />
                             </ListItem>
+                            <ListItem button component={Link} to="/" onClick={this.toggleDrawer('', false)}>
+                                <ListItemIcon><HomeIcon /></ListItemIcon>
+                                <ListItemText primary={"Home"} />
+                            </ListItem>
                             <ListItem button component={Link} to="/staking-form" onClick={this.toggleDrawer('', false)}>
                                 <ListItemIcon><HowToVoteIcon /></ListItemIcon>
                                 <ListItemText primary={<Trans i18nKey="sideMenu.stakingForm" />} />
@@ -182,10 +187,6 @@ class UserBox extends Component{
                             <ListItem button component={Link} to="/crowdsale" onClick={this.toggleDrawer('', false)}>
                                 <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
                                 <ListItemText primary={"Crowdsale"} />
-                            </ListItem>
-                            <ListItem button component={Link} to="/testing" onClick={this.toggleDrawer('', false)}>
-                                <ListItemIcon><InboxIcon /></ListItemIcon>
-                                <ListItemText primary={"Testing"} />
                             </ListItem>
                             <ListItem button onClick={this.toggleDrawer(null, false)}>
                                 <ListItemIcon><InboxIcon /></ListItemIcon>

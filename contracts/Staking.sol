@@ -138,8 +138,8 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint private constant _REFERALL_REWARD = 10;
 
-    uint256 private constant _MAX_TOKEN_SUPPLY_LIMIT = 50000000 * (10**_DECIMALS);
-    uint256 private constant _MIDTERM_TOKEN_SUPPLY_LIMIT = 40000000 * (10**_DECIMALS);
+    uint256 private constant _MAX_TOKEN_SUPPLY_LIMIT = /*50000000*/ 5000 * (10**_DECIMALS);
+    uint256 private constant _MIDTERM_TOKEN_SUPPLY_LIMIT = /*40000000*/ 4000 * (10**_DECIMALS);
 
 
     constructor() public {
@@ -264,7 +264,7 @@ contract Staking is Ownable, ReentrancyGuard {
         require(_amount >= _MIN_STAKE_AMOUNT, "You must stake at least 100 tokens");
         require(_amount <= _MAX_STAKE_AMOUNT, "You must stake at maximum 100000 tokens");
 
-        //require(isSubscriptionEnded(), "Subscription ended");
+        require(!isSubscriptionEnded(), "Subscription ended");
 
         address staker = msg.sender;
         Stake memory newStake;
@@ -315,11 +315,6 @@ contract Staking is Ownable, ReentrancyGuard {
         uint supplied = deposited_amount.sub(total_amount);
         require(updateSuppliedToken(supplied), "Limit reached");
 
-        /*
-        if(!updateSuppliedToken(supplied)){ //supplied == penalty
-            revert();
-        }
-        */
 
         //Only set the withdraw flag in order to disable further withdraw
         stake[msg.sender][_stakeID].returned = true;
@@ -345,6 +340,8 @@ contract Staking is Ownable, ReentrancyGuard {
         if(rewardToWithdraw > pot){
             revert("Pot exhausted");
         }
+
+        pot = pot.sub(rewardToWithdraw);
 
         //require(withdrawFromPot(rewardToWithdraw), "Pot Exhausted");
 
@@ -380,7 +377,14 @@ contract Staking is Ownable, ReentrancyGuard {
         require(updateSuppliedToken(totalAmount), "Machine limit reached");
         
 
-       require(withdrawFromPot(totalAmount), "Pot exhausted");
+        //require(withdrawFromPot(totalAmount), "Pot exhausted");
+
+        if(totalAmount > pot){
+            revert("Pot exhausted");
+        }
+
+        pot = pot.sub(totalAmount);
+
 
         if(ERC20Interface.transfer(msg.sender, totalAmount)){
             emit referralRewardSent(msg.sender, totalAmount);
@@ -501,7 +505,7 @@ contract Staking is Ownable, ReentrancyGuard {
         uint count = 0;
 
         for(uint i = 0; i<stakeCount; i++){
-            if(stake[msg.sender][i].returned){
+            if(!stake[msg.sender][i].returned){
                 count = count + 1;
             }
         }
@@ -810,11 +814,11 @@ contract Staking is Ownable, ReentrancyGuard {
         return amount_supplied;
     }
 
-    function isSubscriptionEnded() external view returns (bool){
-        if(amount_supplied >= amount_supplied.sub(_MIDTERM_TOKEN_SUPPLY_LIMIT)){
-            return true;
-        }else{
+    function isSubscriptionEnded() public view returns (bool){
+        if(amount_supplied.sub(_MIDTERM_TOKEN_SUPPLY_LIMIT) >= _MAX_TOKEN_SUPPLY_LIMIT-_MIDTERM_TOKEN_SUPPLY_LIMIT){
             return false;
+        }else{
+            return true;
         }
     }
 

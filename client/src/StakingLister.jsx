@@ -48,7 +48,7 @@ class StakingLister extends Component{
         this.state = {
             contractInstance: props.contractInstance,
             accounts: props.accounts,
-            numberOfStake: 0,
+            numberOfStake: -1,
             numberOfActiveStake: 0,
             totalAmountStaked: 0,
             stakingList: "",
@@ -297,7 +297,7 @@ class StakingLister extends Component{
                         </Grid>
                     </Grid>
                     <Grid item>
-                        {this.state.referralLoaded && (
+                        {this.state.referralLoaded & this.state.numberOfActiveStake !== -1 && (
                             <AccountInfo
                             stakeNumber={this.state.numberOfActiveStake}
                             amountStaked={this.state.totalAmountStaked}

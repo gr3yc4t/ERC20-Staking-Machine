@@ -37,7 +37,9 @@ class MachineState extends Component{
         await this.state.contractInterface.methods.getMachineState().call().then( (rawResult) => {
 
             let decimals = BigNumber(10).power(this.state.tokenDecimals);
-            let maxSupply = BigNumber(50000000);
+            //let maxSupply = BigNumber(50000000);
+            let maxSupply = BigNumber(5000);
+
             let normalAmount = BigNumber(rawResult).divide(decimals)
             let realAmount = normalAmount.toString();
 
@@ -92,7 +94,8 @@ class MachineState extends Component{
                                         <PieChart
                                             style={{width: "6em"}}
                                             data={[
-                                                { title: 'Available', value: this.state.statePercent, color: '#E38627' },
+                                                { title: 'Available', value: Number(this.state.statePercent), color: '#E38627' },
+                                                { title: 'Supplied', value: 100-Number(this.state.statePercent), color: '#A28127' },
                                             ]}
                                             />
                                     </Grid>
