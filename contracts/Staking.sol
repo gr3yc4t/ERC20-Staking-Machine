@@ -212,7 +212,7 @@ contract Staking is Ownable, ReentrancyGuard {
 
 
     function finalShutdown() external onlyOwner nonReentrant{
-        require(isMachineStopped(), "Machine is not stopped");
+        //require(isMachineStopped(), "Machine is not stopped");
 
         uint machineAmount = getMachineBalance();
 
@@ -815,7 +815,7 @@ contract Staking is Ownable, ReentrancyGuard {
     }
 
     function isSubscriptionEnded() public view returns (bool){
-        if(amount_supplied.sub(_MIDTERM_TOKEN_SUPPLY_LIMIT) >= _MAX_TOKEN_SUPPLY_LIMIT-_MIDTERM_TOKEN_SUPPLY_LIMIT){
+        if(amount_supplied >= _MAX_TOKEN_SUPPLY_LIMIT - _MIDTERM_TOKEN_SUPPLY_LIMIT){
             return false;
         }else{
             return true;

@@ -18,6 +18,7 @@ import PriceChart from './PriceChart'
 
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
+import { withSnackbar } from 'notistack';
 
 
 const styles = theme => ({
@@ -64,7 +65,7 @@ class CrowdsalePanel extends React.Component{
         }
 
 
-        this.crowdsaleAddress = "0xe982E462b094850F12AF94d21D470e21bE9D0E9C"
+        this.crowdsaleAddress = "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb"
         //Mainnet
         //this.crowdsaleAddress = "0x254dffcd3277C0b1660F6d42EFbB754edaBAbC2B"
 
@@ -137,9 +138,21 @@ class CrowdsalePanel extends React.Component{
             console.log("Accout beneficiary: " + account[0])
             console.log(this.state.web3.utils.toWei(this.state.amountOfWEI, "wei").toString())
             this.state.crowdsaleInstance.buyTokens(account[0], {value: this.state.web3.utils.toWei(this.state.amountOfWEI, "wei"), from: account[0] }).then( (res) => {
-                console.log(res)
+                this.props.enqueueSnackbar(<Trans i18nKey="crowdsale.snackbarSuccess" />, {
+                    variant: 'success',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    },
+                });
             }).catch( (err) => {
-                console.log(err)
+                this.props.enqueueSnackbar(<Trans i18nKey="crowdsale.snackbarFailure" />, {
+                    variant: 'error',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    },
+                });
             })
 
 
@@ -251,4 +264,4 @@ CrowdsalePanel.propTypes = {
 };
 
 
-export default withStyles(styles)(CrowdsalePanel);
+export default  withSnackbar(withStyles(styles)(CrowdsalePanel));

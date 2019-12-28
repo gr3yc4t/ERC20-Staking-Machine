@@ -48,8 +48,6 @@ class HomePage extends Component {
         }).catch( (err) =>{
             console.log(err);
         });
-
-
     }
 
 

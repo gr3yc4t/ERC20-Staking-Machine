@@ -84,7 +84,7 @@ class StakingPanel extends Component{
                     justify="center"
                     alignItems="center"
                 >
-                    {!this.state.subscriptionEnded && (
+                    {!this.state.subscriptionEnded ? (
                         <div>
                         <Grid item>  
                             <Typography color="textPrimary" variant="h4"><Trans i18nKey="staking_form.title" /></Typography>
@@ -111,6 +111,10 @@ class StakingPanel extends Component{
                                         )}
                             </TokenContext.Consumer>
                         </Grid>
+                        </div>
+                    ) : (
+                        <div>
+                            <Typography>Subscription ended</Typography>
                         </div>
                     )}
 

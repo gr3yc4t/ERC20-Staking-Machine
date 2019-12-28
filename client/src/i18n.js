@@ -20,7 +20,7 @@ i18n.use(LanguageDetector).init({
           stakingForm: "Staking Form",
           stakeList: "Stake List",
           referrals: "Referrals Panel",
-          machineState: "Machine State:",
+          machineState: "Machine State",
           machineAvailableAmount: " of token still available",
           loadingMachineState: "Loading machine state"
 
@@ -69,7 +69,9 @@ i18n.use(LanguageDetector).init({
           currentRate: "Current exchange rate",
           amountBITN: "Amounf of BITN",
           amountETH: "Amount of ETH",
-          buyButton: "Buy"
+          buyButton: "Buy",
+          snackbarSuccess: "Successful purchase",
+          snackbarFailure: "Error on purchase",
         },
         approvementPanel: {
           title: "Approvement",
@@ -98,7 +100,7 @@ i18n.use(LanguageDetector).init({
             stakingForm: "Modulo Staking",
             stakeList: "Lista Stake",
             referrals: "Pannello Referral",
-            machineState: "Stato Contratto:",
+            machineState: "Stato Contratto",
             machineAvailableAmount: " token ancora disponibili",
             loadingMachineState: "Caricando stato macchina"
           },
@@ -146,7 +148,11 @@ i18n.use(LanguageDetector).init({
             currentRate: "Cambio attuale",
             amountBITN: "Ammontare di BITN",
             amountETH: "Ammontare di  ETH",
-            buyButton: "Acquista"
+            buyButton: "Acquista",
+            snackbarSuccess: "Token acquistati con successo",
+            snackbarFailure: "Errore durante l'acquisto",
+
+
           },
           approvementPanel: {
             title: "Approvazione",

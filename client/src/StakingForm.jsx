@@ -60,9 +60,11 @@ class StakingForm extends Component{
             tokenDecimals: props.tokenDecimals,
             stakingAddress: props.stakingAddress,
             amountToStake: 100,
-            timeToLock: 0,
+            tokenBalance: 0,
             showReferralInput: false,
             hasReferral: false,
+            hasAllowance: false,
+            allowanceValue: 0,
             referralAddress: "",
             loading: false,                      //Display the loading icon during contract request,
             approvementConfirmed: false
@@ -80,6 +82,8 @@ class StakingForm extends Component{
 
     componentDidMount(){
         this.hasReferral();
+        this.checkAllowance();
+        this.getTokenBalance();
     }
 
 
@@ -110,7 +114,20 @@ class StakingForm extends Component{
         this.setState({referralAddress: event.target.value})
     }
 
+    async getTokenBalance(){
+        await this.state.tokenInstance.balanceOf(this.state.account).then( (response) => {
+            console.log(response);
 
+            let decimals = BigNumber(10).pow(this.state.tokenDecimals)
+
+            let viewBalance = BigNumber(response.toString()).divide(decimals)
+
+            this.setState({tokenBalance: viewBalance.toString()})
+
+        }).catch( (err) =>{
+            console.log(err );
+        });
+    }
 
 
     handleSubmit(event){
@@ -120,14 +137,41 @@ class StakingForm extends Component{
             console.log("Invalid amount")
         }
 
-        //this.getApprove().then( (res) => {
-            this.activateStake(); 
-        //})  
-   
+        this.checkAllowance();
+
+
+
+        console.log(this.state.allowanceValue)
+        if(this.state.amountToStake > this.state.allowanceValue){
+            this.props.enqueueSnackbar("Set the allowance first", {
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+            return;
+        }
+
+        console.log(this.state.tokenBalance)
+        if(this.state.amountToStake > this.state.tokenBalance){
+            this.props.enqueueSnackbar("Insufficient funds", {
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+            return
+        }
+
+
+        
+        this.activateStake(); 
     }
 
 
-    async getApprove(){
+    async checkAllowance(){
         
         if(this.state.tokenInstance == null){
             console.log("The contract is not instantiated yet")
@@ -138,15 +182,30 @@ class StakingForm extends Component{
 
         this.setState({loading: true})
 
-        await this.state.tokenInstance.approve(this.state.stakingAddress, this.state.finalAmount.toString(), {from: this.state.account}).then( (response) => {
-            console.log(response);
-            if(response === true){
-                console.log("Approved the management of " + this.state.approvedAmount + " tokens")
+        await this.state.tokenInstance.allowance(this.state.account, this.state.stakingAddress).then( (amountAllowed) => {
+            if(!amountAllowed.isZero()){
+                console.log("Has positive allowance");
+
+                //Calculating the current allowance
+                let decimals = BigNumber(10).pow(this.state.tokenDecimals)
+
+                let viewBalance = BigNumber(amountAllowed.toString()).divide(decimals)
+    
+                this.setState({
+                    allowanceValue: viewBalance.toString(),
+                    hasAllowance: true,
+                    loading: false
+                })
+
+                console.log(this.state.allowanceValue)
             }else{
-                console.log("Has NOT the approvement")
+                console.log("Has negative allowance");
+                this.setState({
+                    hasAllowance: false,
+                    loading: false,
+                    allowanceValue: 0
+                })
             }
-            this.setState({approvementConfirmed: true})
-            return response;
         }).catch( (err) =>{
             console.log(err);
             this.setState({loading: false})
@@ -158,6 +217,9 @@ class StakingForm extends Component{
 
 
     async activateStake(){
+
+
+
 
         var _referralAddress = "0x0000000000000000000000000000000000000001";
 
@@ -233,7 +295,7 @@ class StakingForm extends Component{
             );
         }
 
-
+        /*
         if(this.state.loading){
             return(
                 <div>
@@ -244,6 +306,20 @@ class StakingForm extends Component{
                 </div>
             );
         }
+        */
+
+
+        /*
+        if(!this.state.hasAllowance){
+
+            return (
+                <div>
+                    <Typography>Currently you have no allowance, please set a value in the "Approvement" panel</Typography>
+                </div>
+            )
+
+        }
+        */
 
         return (
             <div>

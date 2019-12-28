@@ -7,7 +7,7 @@ import StakingLister from './StakingLister'
 import CrowdsalePanel from './CrowdsalePanel'
 import HomePage from './HomePage'
 import TestingBox from './TestingBox'
-
+import AccountStatus from "./AccountStatus"
 
 import MainBar from "./MainBar"
 import MachineState from './MachineState'
@@ -173,6 +173,11 @@ class UserBox extends Component{
                                 <ListItemText primary={<Trans i18nKey="sideMenu.referrals" />} />
                             </ListItem>
                             <Divider />
+                            <ListItem button component={Link} to="/crowdsale" onClick={this.toggleDrawer('', false)}>
+                                <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
+                                <ListItemText primary={"Crowdsale"} />
+                            </ListItem>
+                            <Divider />
                             <ListItem>
                                 <TokenContext.Consumer>
                                     {context => (
@@ -184,10 +189,19 @@ class UserBox extends Component{
                                     </TokenContext.Consumer>
                             </ListItem>
                             <Divider />
-                            <ListItem button component={Link} to="/crowdsale" onClick={this.toggleDrawer('', false)}>
-                                <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
-                                <ListItemText primary={"Crowdsale"} />
+                            <ListItem>
+                            <TokenContext.Consumer>
+                                    {context => (
+                                        <AccountStatus
+                                            web3={this.state.web3}
+                                            tokenInstance={context.instance}
+                                            tokenDecimals={context.decimals}
+                                            accounts={this.state.accounts}
+                                        />
+                                    )}
+                                    </TokenContext.Consumer>
                             </ListItem>
+                            <Divider />
                             <ListItem button onClick={this.toggleDrawer(null, false)}>
                                 <ListItemIcon><InboxIcon /></ListItemIcon>
                                 <ListItemText primary={"Close"} />
