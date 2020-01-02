@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css",
+    "main.js": "/ERC20-Staking-Machine/client/build/static/js/main.9f833bd2.chunk.js",
+    "main.js.map": "/ERC20-Staking-Machine/client/build/static/js/main.9f833bd2.chunk.js.map",
+    "runtime-main.js": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js",
+    "runtime-main.js.map": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js.map",
+    "static/css/2.e4d87476.chunk.css": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css",
+    "static/js/2.f91b4e89.chunk.js": "/ERC20-Staking-Machine/client/build/static/js/2.f91b4e89.chunk.js",
+    "static/js/2.f91b4e89.chunk.js.map": "/ERC20-Staking-Machine/client/build/static/js/2.f91b4e89.chunk.js.map",
+    "index.html": "/ERC20-Staking-Machine/client/build/index.html",
+    "precache-manifest.75d1c71b327b2d5d3de5f98726fd7d8b.js": "/ERC20-Staking-Machine/client/build/precache-manifest.75d1c71b327b2d5d3de5f98726fd7d8b.js",
+    "service-worker.js": "/ERC20-Staking-Machine/client/build/service-worker.js",
+    "static/css/2.e4d87476.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css.map",
+    "static/css/main.68a98085.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css.map",
+    "static/js/2.f91b4e89.chunk.js.LICENSE": "/ERC20-Staking-Machine/client/build/static/js/2.f91b4e89.chunk.js.LICENSE",
+    "static/media/index.css": "/ERC20-Staking-Machine/client/build/static/media/roboto-latin-900italic.ebf6d164.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.6cd7f9c1.js",
+    "static/css/2.e4d87476.chunk.css",
+    "static/js/2.f91b4e89.chunk.js",
+    "static/css/main.68a98085.chunk.css",
+    "static/js/main.9f833bd2.chunk.js"
+  ]
+}
