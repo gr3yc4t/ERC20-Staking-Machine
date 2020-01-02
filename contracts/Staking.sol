@@ -125,7 +125,7 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint256 private constant _DECIMALS = 18;
 
-    uint256 private constant _INTEREST_PERIOD = 10 seconds;//1 days * 30;    //One Month
+    uint256 private constant _INTEREST_PERIOD = 1 days * 30;    //One Month
     uint256 private constant _INTEREST_VALUE = 10;    //10%
 
     uint256 private constant _PENALTY_VALUE = 20;    //10%
@@ -138,8 +138,8 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint private constant _REFERALL_REWARD = 10;
 
-    uint256 private constant _MAX_TOKEN_SUPPLY_LIMIT = /*50000000*/ 5000 * (10**_DECIMALS);
-    uint256 private constant _MIDTERM_TOKEN_SUPPLY_LIMIT = /*40000000*/ 4000 * (10**_DECIMALS);
+    uint256 private constant _MAX_TOKEN_SUPPLY_LIMIT =     50000000 * (10**_DECIMALS);
+    uint256 private constant _MIDTERM_TOKEN_SUPPLY_LIMIT = 40000000 * (10**_DECIMALS);
 
 
     constructor() public {
@@ -187,7 +187,6 @@ contract Staking is Ownable, ReentrancyGuard {
             revert("Unable to tranfer funds");
         }
 
-
     }
 
 
@@ -203,7 +202,6 @@ contract Staking is Ownable, ReentrancyGuard {
         }else{
             revert("Unable to tranfer funds");
         }
-
 
     }
 
