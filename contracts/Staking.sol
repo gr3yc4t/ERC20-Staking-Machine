@@ -178,8 +178,6 @@ contract Staking is Ownable, ReentrancyGuard {
     function depositPot(uint _amount) external onlyOwner nonReentrant {
         require(tokenAddress != address(0), "The Token Contract is not specified");
 
-        //amount_supplied = amount_supplied.add(_amount);
-
         pot = pot.add(_amount);
 
         if(ERC20Interface.transferFrom(msg.sender, address(this), _amount)){
@@ -195,10 +193,9 @@ contract Staking is Ownable, ReentrancyGuard {
 
     function returnPot(uint _amount) external onlyOwner nonReentrant{
         require(tokenAddress != address(0), "The Token Contract is not specified");
-       
         require(pot.sub(_amount) >= 0, "Not enough token");
 
-        pot = pot.sub(_amount); //Using SafeMath library
+        pot = pot.sub(_amount);
 
         if(ERC20Interface.transfer(msg.sender, _amount)){
             //Emit the event to update the UI
@@ -212,7 +209,6 @@ contract Staking is Ownable, ReentrancyGuard {
 
 
     function finalShutdown() external onlyOwner nonReentrant{
-        //require(isMachineStopped(), "Machine is not stopped");
 
         uint machineAmount = getMachineBalance();
 
@@ -343,20 +339,17 @@ contract Staking is Ownable, ReentrancyGuard {
 
         pot = pot.sub(rewardToWithdraw);
 
-        //require(withdrawFromPot(rewardToWithdraw), "Pot Exhausted");
-
         stake[msg.sender][_stakeID].alreadyWithdrawedAmount = _stake.alreadyWithdrawedAmount.add(rewardToWithdraw);
 
         if(ERC20Interface.transfer(msg.sender, rewardToWithdraw)){
             emit rewardWithdrawed(msg.sender);
         }else{
-            //revert("Unable to transfer funds");
+            revert("Unable to transfer funds");
         }
-
-
 
         return true;
     }
+
 
     function withdrawReferralReward() external nonReentrant returns (bool){
         uint referralCount = referral[msg.sender].length;
@@ -368,14 +361,12 @@ contract Staking is Ownable, ReentrancyGuard {
             uint currentReward = calculateRewardReferral(currentAccount);
 
             totalAmount = totalAmount.add(currentReward);
-            
+
             //Update the alreadyWithdrawed status
             account_referral[currentAccount].referralAlreadyWithdrawed = account_referral[currentAccount].referralAlreadyWithdrawed.add(currentReward);
         }
 
-        
         require(updateSuppliedToken(totalAmount), "Machine limit reached");
-        
 
         //require(withdrawFromPot(totalAmount), "Pot exhausted");
 
@@ -653,7 +644,7 @@ contract Staking is Ownable, ReentrancyGuard {
         bool foundFlag = false;
 
         for(uint i = 0; i<stakeNumber; i++){
-            if(stake[customer][i].deposit_amount < min/* && !stake[customer][i].returned*/){
+            if(stake[customer][i].deposit_amount < min){
                 if(stake[customer][i].returned){
                     continue;
                 }

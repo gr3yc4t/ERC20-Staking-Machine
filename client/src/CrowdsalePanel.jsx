@@ -161,13 +161,20 @@ class CrowdsalePanel extends React.Component{
 
     }
 
-
+    
     handleChange(event){
         try{
             let integerAmount = Number(event.target.value)
             
             if(integerAmount > this.state.availableBalance){
                 integerAmount = this.state.availableBalance;
+                this.props.enqueueSnackbar(<Trans i18nKey="crowdsale.liquidityLimitReached" />, {
+                    variant: 'info',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    },
+                });
             }
 
             console.log(this.state.currentRate)

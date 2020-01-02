@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Staking Machine",
+  "name": "ERC20 Staking Machine",
   "icons": [
     {
       "src": "favicon.ico",

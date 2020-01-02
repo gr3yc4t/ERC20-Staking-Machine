@@ -101,6 +101,8 @@ class CrowdsaleTesting extends React.Component{
                 </Grid>
                 <Grid item>
                     <TextField label="Amount of wei" value={this.state.amountOfWEI}></TextField>
+                </Grid>
+                <Grid item>
                     <TextField label="Amount of ETH" value={this.state.amountOfETH}></TextField>
                 </Grid>
             </Grid>

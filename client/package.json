@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "ERC20-Staking-Machine",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

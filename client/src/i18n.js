@@ -13,7 +13,12 @@ i18n.use(LanguageDetector).init({
           referralCheckbox: "Have a referral?",
           textBoxHelper: "Amount to stake",
           helpButton: "Help needed?",
-          referralPlaceholder: "Referral Address"
+          referralPlaceholder: "Referral Address",
+          errorUndefinedStake: "Set the amount to stake first",
+          errorInsufficientFunds: "Insufficient funds",
+          errorNoAllowance: "Set the allowance first",
+          unableToStake: "Unable to stake",
+          correctStake: "Successful stake"
 
         },
         sideMenu: {
@@ -59,9 +64,11 @@ i18n.use(LanguageDetector).init({
           tokenFailedWithdrawMsg: "Unable to withdraw tokens",
         },
         help: {
-          p1: "Smart contract manages ERC20 tokens differently compared to Ether. In fact if some ERC20 token is sent to the contract, it is not able to understand where these token comes from",
-          p2: "",
-          p3: ""
+          p1: "Smart contract manages ERC20 tokens differently compared to Ether. In fact if some ERC20 token is sent to the contract, it is not able to understand where these token comes from.",
+          p2: "For this reason, you have to set the approvement before each deposit on this app using the related panel",
+          p3: "",
+          linkText: "More Info",
+          link: "https://tokenallowance.io/index.html"
         },
         crowdsale: {
           title: "Crowdsale Panel",
@@ -72,6 +79,7 @@ i18n.use(LanguageDetector).init({
           buyButton: "Buy",
           snackbarSuccess: "Successful purchase",
           snackbarFailure: "Error on purchase",
+          liquidityLimitReached: "Liquidity limit reached"
         },
         approvementPanel: {
           title: "Approvement",
@@ -80,8 +88,16 @@ i18n.use(LanguageDetector).init({
           textLabel: "Amount to approve",
           editInternalButton: "Edit the amount to approve",
           closeButton: "Close"
+        },
+        HomePage: {
+          title: "Welcome",
+          subtitle: "Start using your the BITN staking machine now",
+          tokenBalance: "Token balance",
+          stakeToken: "Stake your token now!!",
+          goStaking: "Go to the staking page",
+          needToken: "Need some token?",
+          goCrowdsale: "Go to the crowdsale page"
         }
-
       }
     },
     it: {
@@ -93,7 +109,12 @@ i18n.use(LanguageDetector).init({
             referralCheckbox: "Hai un referral?",
             textBoxHelper: "Importo di stake",
             helpButton: "Serve aiuto?",
-            referralPlaceholder: "Indirizzo referral"
+            referralPlaceholder: "Indirizzo referral",
+            errorUndefinedStake: "Inserisci il numero di token",
+            errorInsufficientFunds: "Fondi insufficienti",
+            errorNoAllowance: "Approvazione non abilitata",
+            unableToStake: "Impossibile effettuare lo stake",
+            correctStake: "Stake effetuato con successo"
 
           },
           sideMenu: {
@@ -140,7 +161,9 @@ i18n.use(LanguageDetector).init({
           help: {
             p1: "Gli smart-contract gestiscono i token ERC20 in maniera diversa dagli Ether. Infatti, mentre normalmente quando si inviano ETH ad uno smart-contract esso è in grado capire autonomamente da chi provengono, per gli ERC20 non è così.",
             p2: "Per questo motivo, prima di interagire con uno smart-contract che utilizza token ERC20, è necessario dare una sorta di \"Autorizzazione\". In pratica si autorizza lo smart-contract ad utilizzare una quantità specificata dei token dell'utente.",
-            p3: "In questo modo è possibile effettuare in modo sicuro transazione con i token ERC20."
+            p3: "In questo modo è possibile effettuare in modo sicuro transazione con i token ERC20.",
+            linkText: "Maggiori informazioni",
+            link: "https://tokenallowance.io/it/index.html"
           },
           crowdsale: {
             title: "Pannello Vendita",
@@ -151,18 +174,25 @@ i18n.use(LanguageDetector).init({
             buyButton: "Acquista",
             snackbarSuccess: "Token acquistati con successo",
             snackbarFailure: "Errore durante l'acquisto",
-
-
+            liquidityLimitReached: "Limite di liquidità raggiunto"
           },
           approvementPanel: {
-            title: "Approvazione",
+            title: "Autorizzazione",
             approvementStatus: "Hai già l'approvazione per gestire",
             editExternalButton: "Modifica la quantità",
             textLabel: "Quantità da approvare",
             editInternalButton: "Modifica la quantità da approvare",
             closeButton: "Chiudi"
+          },
+          HomePage: {
+            title: "Benvenuto",
+            subtitle: "Inizia subito ad usare la BITN Staking Machine",
+            tokenBalance: "Token Disponibili",
+            stakeToken: "Metti i tuoi token in stake ora!!",
+            goStaking: "Vai alla pagina di staking",
+            needToken: "Hai bisogno dei BITN token?",
+            goCrowdsale: "Vai alla pagina di crowdsale"
           }
-  
         }
       },
 

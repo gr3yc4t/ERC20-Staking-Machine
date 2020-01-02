@@ -18,6 +18,7 @@ import { Trans } from "react-i18next";
 import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 
+import Link from '@material-ui/core/Link'
 
 const styles = theme => ({
     helpButton: {
@@ -46,7 +47,6 @@ class ApproveInfo extends React.Component{
 
         this.handleClickOpen = this.handleClickOpen.bind(this)
         this.handleClose = this.handleClose.bind(this)
-
     }
 
 
@@ -93,6 +93,12 @@ class ApproveInfo extends React.Component{
                         </Typography>
                         <Typography gutterBottom>
                             <Trans i18nKey="help.p3" />
+                        </Typography>
+                        <Typography gutterBottom>
+                            <Trans i18nKey="help.p4" />
+                        </Typography>
+                        <Typography gutterBottom>
+                            <Link href="https://tokenallowance.io/it/index.html"><Trans i18nKey="help.linkText" /></Link>
                         </Typography>
                     </DialogContent>
                     <DialogActions>

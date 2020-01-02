@@ -132,9 +132,17 @@ class StakingForm extends Component{
 
     handleSubmit(event){
         event.preventDefault();
-
-        if(this.state.finalAmount === null){
+        console.log(this.state.finalAmount)
+        if(typeof this.state.finalAmount == "undefined"){
             console.log("Invalid amount")
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorUndefinedStake" />, {
+                variant: 'warning',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+            return;
         }
 
         this.checkAllowance();
@@ -143,7 +151,7 @@ class StakingForm extends Component{
 
         console.log(this.state.allowanceValue)
         if(this.state.amountToStake > this.state.allowanceValue){
-            this.props.enqueueSnackbar("Set the allowance first", {
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorNoAllowance" />, {
                 variant: 'error',
                 anchorOrigin: {
                     vertical: 'bottom',
@@ -155,7 +163,7 @@ class StakingForm extends Component{
 
         console.log(this.state.tokenBalance)
         if(this.state.amountToStake > this.state.tokenBalance){
-            this.props.enqueueSnackbar("Insufficient funds", {
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorInsufficientFunds" />, {
                 variant: 'error',
                 anchorOrigin: {
                     vertical: 'bottom',
@@ -178,7 +186,6 @@ class StakingForm extends Component{
             return;
         }
 
-        console.log("Get Approve")
 
         this.setState({loading: true})
 
@@ -219,8 +226,6 @@ class StakingForm extends Component{
     async activateStake(){
 
 
-
-
         var _referralAddress = "0x0000000000000000000000000000000000000001";
 
         if(!this.state.hasReferral && this.state.showReferralInput)
@@ -237,7 +242,7 @@ class StakingForm extends Component{
 
 
 
-            this.props.enqueueSnackbar("Correctly staked " + this.state.amountToStake + " tokens", {
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.correctStake" />, {
                 variant: 'success',
                 anchorOrigin: {
                     vertical: 'bottom',
@@ -251,7 +256,7 @@ class StakingForm extends Component{
         }).catch( (err) => {
             console.log("Unable to stake; " + err)
             this.setState({loading: false})
-            this.props.enqueueSnackbar("Unable to stake", {
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.unableToStake" />, {
                 variant: 'error',
                 anchorOrigin: {
                     vertical: 'bottom',
@@ -341,7 +346,6 @@ class StakingForm extends Component{
                                 value={this.state.amountToStake}  
                                 autoFocus 
                                 inputProps={{ min: "100", max: "100000", step: "1" }}
-
                         />
                     </Grid>
 

@@ -80,8 +80,6 @@ class UserBox extends Component{
         
         this.toggleDrawer = this.toggleDrawer.bind(this)
 
-
-
     }
 
 
