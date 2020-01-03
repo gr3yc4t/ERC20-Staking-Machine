@@ -37,8 +37,7 @@ class MachineState extends Component{
         await this.state.contractInterface.methods.getMachineState().call().then( (rawResult) => {
 
             let decimals = BigNumber(10).power(this.state.tokenDecimals);
-            //let maxSupply = BigNumber(50000000);
-            let maxSupply = BigNumber(5000);
+            let maxSupply = BigNumber(50000000);
 
             let normalAmount = BigNumber(rawResult).divide(decimals)
             let realAmount = normalAmount.toString();

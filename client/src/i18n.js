@@ -44,7 +44,8 @@ i18n.use(LanguageDetector).init({
           myReferralLabel: "Your referral address is",
           availableReward: "Available Reward",
           totalAvailavelReward: "Total Reward available",
-          withdrawAll: "Withdraw All"
+          withdrawAll: "Withdraw All",
+          noReferral: "No referral found"
         },
         stake_detail: {
           previewText: "Amount staked",
@@ -139,7 +140,8 @@ i18n.use(LanguageDetector).init({
             myReferralLabel: "Il tuo indirizzo di referral è",
             availableReward: "Premio disponibile",
             totalAvailavelReward: "Premio totale",
-            withdrawAll: "Preleva premio"
+            withdrawAll: "Preleva premio",
+            noReferral: "Nessun referral trovato"
           },
           stake_detail: {
             previewText: "Token in stake",

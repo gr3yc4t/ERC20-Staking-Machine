@@ -156,16 +156,16 @@ class ApproveTranfer extends React.Component{
 
 
         console.log(this.state.stakingAddress)
-        console.log(this.state.approvedAmount)
+        console.log(this.state.approvedAmount.toString())
 
-        await this.state.tokenInstance.approve(this.state.stakingAddress, this.state.approvedAmount, {from: this.state.accounts[0]}).then( (response) => {
+        await this.state.tokenInstance.approve(this.state.stakingAddress, this.state.approvedAmount.toString(), {from: this.state.accounts[0]}).then( (response) => {
             console.log(response);
             if(response === true){
-                console.log("Approved the management of " + this.state.approvedAmount + " tokens to " + this.state.stakingAddress)
+                console.log("Approved the management of " + this.state.approvedAmount.toString() + " tokens to " + this.state.stakingAddress)
                 this.setState({
                     hasAllowance: true
                 }, () => {
-                    this.props.enqueueSnackbar("Approved the management of " + this.state.approvedAmount + " tokens", {
+                    this.props.enqueueSnackbar("Approved the management of " + this.state.approvedAmount.toString() + " tokens", {
                         variant: 'success',
                         anchorOrigin: {
                             vertical: 'bottom',

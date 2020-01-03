@@ -220,7 +220,7 @@ class ReferralBox extends Component{
                         ): (
                             <Grid item>
                                 <Typography color="error"><ErrorOutlineIcon></ErrorOutlineIcon></Typography>
-                                <Typography color="error">No referral found</Typography>
+                                <Typography color="error"><Trans i18nKey="referral_panel.noReferral" /></Typography>
                             </Grid>
                         )}
 

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2795c78eef0e811256c7043aca6c0f33",
+    "revision": "803cbd3112c96cac9c724e92c336ecec",
     "url": "/ERC20-Staking-Machine/client/build/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css"
   },
   {
-    "revision": "e9d67fb23fe128eec4fb",
+    "revision": "a752fe79efcf21073581",
     "url": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/ERC20-Staking-Machine/client/build/static/js/2.f91b4e89.chunk.js.LICENSE"
   },
   {
-    "revision": "e9d67fb23fe128eec4fb",
-    "url": "/ERC20-Staking-Machine/client/build/static/js/main.9f833bd2.chunk.js"
+    "revision": "a752fe79efcf21073581",
+    "url": "/ERC20-Staking-Machine/client/build/static/js/main.0a1abf35.chunk.js"
   },
   {
     "revision": "d6bd74f28772b50de14a",
