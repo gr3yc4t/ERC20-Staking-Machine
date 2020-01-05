@@ -125,10 +125,10 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint256 private constant _DECIMALS = 18;
 
-    uint256 private constant _INTEREST_PERIOD = 1 days * 30;    //One Month
-    uint256 private constant _INTEREST_VALUE = 10;    //10%
+    uint256 private constant _INTEREST_PERIOD = 1 days;    //One Month
+    uint256 private constant _INTEREST_VALUE = 333;    //0.333% per day
 
-    uint256 private constant _PENALTY_VALUE = 20;    //10%
+    uint256 private constant _PENALTY_VALUE = 20;    //20% of the total stake
 
 
 
@@ -136,7 +136,7 @@ contract Staking is Ownable, ReentrancyGuard {
 
     uint256 private constant _MAX_STAKE_AMOUNT = 100000 * (10**_DECIMALS);
 
-    uint private constant _REFERALL_REWARD = 10;
+    uint private constant _REFERALL_REWARD = 333; //0.333% per day
 
     uint256 private constant _MAX_TOKEN_SUPPLY_LIMIT =     50000000 * (10**_DECIMALS);
     uint256 private constant _MIDTERM_TOKEN_SUPPLY_LIMIT = 40000000 * (10**_DECIMALS);
@@ -308,6 +308,9 @@ contract Staking is Ownable, ReentrancyGuard {
         //Update the supplied amount considering also the penalty
         uint supplied = deposited_amount.sub(total_amount);
         require(updateSuppliedToken(supplied), "Limit reached");
+
+        //Add the penalty to the pot
+        pot = pot.add(penalty);
 
 
         //Only set the withdraw flag in order to disable further withdraw
@@ -587,7 +590,7 @@ contract Staking is Ownable, ReentrancyGuard {
 
         uint periods = calculateAccountStakePeriods(customer, lowStakeID);
 
-        uint currentReward = lowestStake.mul(_REFERALL_REWARD).div(100).mul(periods);
+        uint currentReward = lowestStake.mul(_REFERALL_REWARD).mul(periods).div(100000);
 
         uint alreadyWithdrawed = account_referral[customer].referralAlreadyWithdrawed;
 
@@ -642,7 +645,7 @@ contract Staking is Ownable, ReentrancyGuard {
         bool foundFlag = false;
 
         for(uint i = 0; i<stakeNumber; i++){
-            if(stake[customer][i].deposit_amount < min){
+            if(stake[customer][i].deposit_amount <= min){
                 if(stake[customer][i].returned){
                     continue;
                 }
@@ -680,9 +683,9 @@ contract Staking is Ownable, ReentrancyGuard {
 
         uint periods = calculatePeriods(_stakeID);  //Periods for interest calculation
 
-        uint interest = amount_staked.mul(_INTEREST_VALUE).div(100);
+        uint interest = amount_staked.mul(_INTEREST_VALUE);
 
-        uint total_interest = interest.mul(periods);
+        uint total_interest = interest.mul(periods).div(100000);
 
         uint reward = total_interest.sub(already_withdrawed); //Subtract the already withdrawed amount
 
@@ -697,9 +700,9 @@ contract Staking is Ownable, ReentrancyGuard {
 
         uint periods = calculateAccountStakePeriods(_account, _stakeID);  //Periods for interest calculation
 
-        uint interest = amount_staked.mul(_INTEREST_VALUE).div(100);
+        uint interest = amount_staked.mul(_INTEREST_VALUE);
 
-        uint total_interest = interest.mul(periods);
+        uint total_interest = interest.mul(periods).div(100000);
 
         uint reward = total_interest.sub(already_withdrawed); //Subtract the already withdrawed amount
 

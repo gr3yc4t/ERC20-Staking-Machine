@@ -4074,10 +4074,538 @@
       "links": {},
       "address": "0x630589690929E9cdEFDeF0734717a9eF3Ec7Fcfe",
       "transactionHash": "0x710fa1ec91116f757dbdf968e5e39a8b8a9436eec746413ef3dbfa08488b55e2"
+    },
+    "1578144492333": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+      "transactionHash": "0xdccb2e06d65581c7a729a64b73bc3be38b3a51826d22aa803d9c27ae2ceaca47"
+    },
+    "1578144694999": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578145211012": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578145821971": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578152515231": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578153125774": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578153945958": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
+    },
+    "1578156280069": {
+      "events": {
+        "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newRate",
+              "type": "uint256"
+            }
+          ],
+          "name": "RateUpdated",
+          "type": "event",
+          "signature": "0xe65c987b2e4668e09ba867026921588005b2b2063607a1e7e7d91683c8f91b7b"
+        },
+        "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "purchaser",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "beneficiary",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "value",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "TokensPurchased",
+          "type": "event",
+          "signature": "0x6faf93231a456e552dbc9961f58d9713ee4f2e69d15f1975b050ef0911053a7b"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xe982E462b094850F12AF94d21D470e21bE9D0E9C",
+      "transactionHash": "0x065da9a0651e56c687bbcdd0c5f6a441273723364141fd7c0ba33f79e5d7e9f5"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2020-01-02T17:04:46.755Z",
+  "updatedAt": "2020-01-04T16:45:19.939Z",
   "devdoc": {
     "methods": {
       "buyTokens(address)": {

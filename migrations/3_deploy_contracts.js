@@ -3,14 +3,14 @@ var BitcoinCompanyNetworkTestToken = artifacts.require("./BitcoinCompanyNetworkT
 
 module.exports = function(deployer, network, accounts){
     
-    //deployer.deploy(Staking).then( function (_Staking) {
-      //console.log("Staking address: " + _Staking.address)
-      /*_Staking.setTokenAddress(BitcoinCompanyNetworkTestToken.address).then( (res) => {
+    deployer.deploy(Staking).then( function (_Staking) {
+      console.log("Staking address: " + _Staking.address)
+      _Staking.setTokenAddress(BitcoinCompanyNetworkTestToken.address).then( (res) => {
         
       })
-      */
+      
 
-    //});
+    });
     
 
  

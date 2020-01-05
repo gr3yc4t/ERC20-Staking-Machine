@@ -6,6 +6,7 @@ import DepositPot from "./DepositPot"
 import ApproveTransfer from "./ApproveTransfer"
 import TokenContext from './TokenContext'
 import CrowdsaleOwnerPanel from './CrowdsaleOwnerPanel'
+import FinalShutdownBox from './FinalShutdownBox'
 
 import Grid from '@material-ui/core/Grid'
 
@@ -88,6 +89,9 @@ class OwnerBox extends Component{
                             >  
                             </CrowdsaleOwnerPanel>
                         </Grid>
+                        <Grid item>
+
+                        </Grid>
                     </Grid>
                 </div>
             );
@@ -96,6 +100,14 @@ class OwnerBox extends Component{
 
 
 
+    /*
+        <FinalShutdownBox 
+            stakingAddress={this.state.stakingAddress}                                        
+            web3={this.state.web3}
+            contractInterface={this.state.stakingInstance}
+            account={this.state.accounts[0]}
+        />
+    */
 
 }
 

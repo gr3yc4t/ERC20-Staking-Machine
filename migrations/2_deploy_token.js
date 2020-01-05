@@ -4,11 +4,11 @@ var BitcoinCompanyNetworkTestToken = artifacts.require("./BitcoinCompanyNetworkT
 
 module.exports = function(deployer, network, accounts){
 
-    /*
+    
     deployer.deploy(BitcoinCompanyNetworkTestToken).then( (_BitcoinCompanyNetworkTestToken) => {
         console.log("Token correctly deployed")
     })
-    */
+    
 };
 
 

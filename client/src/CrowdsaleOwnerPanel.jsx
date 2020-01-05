@@ -36,7 +36,7 @@ class CrowdsaleOwnerPanel extends React.Component{
         }
 
 
-        //this.crowdsaleAddress = "0xD833215cBcc3f914bD1C9ece3EE7BF8B14f841bb"
+        //this.crowdsaleAddress = "0xe982E462b094850F12AF94d21D470e21bE9D0E9C"
         //Mainnet
         this.crowdsaleAddress = "0x37Ff0201d4f574064d94844e46845BF8dDd1a9C6"
 

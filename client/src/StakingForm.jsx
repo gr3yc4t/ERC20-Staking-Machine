@@ -145,37 +145,40 @@ class StakingForm extends Component{
             return;
         }
 
-        this.checkAllowance();
+        this.checkAllowance().then( () => {
+
+            console.log(this.state.allowanceValue)
+            if(this.state.amountToStake > this.state.allowanceValue){
+                this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorNoAllowance" />, {
+                    variant: 'error',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    },
+                });
+                return;
+            }
+    
+            console.log(this.state.tokenBalance)
+            if(this.state.amountToStake > this.state.tokenBalance){
+                this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorInsufficientFunds" />, {
+                    variant: 'error',
+                    anchorOrigin: {
+                        vertical: 'bottom',
+                        horizontal: 'left',
+                    },
+                });
+                return
+            }
+    
+    
+            
+            this.activateStake(); 
 
 
-
-        console.log(this.state.allowanceValue)
-        if(this.state.amountToStake > this.state.allowanceValue){
-            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorNoAllowance" />, {
-                variant: 'error',
-                anchorOrigin: {
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                },
-            });
-            return;
-        }
-
-        console.log(this.state.tokenBalance)
-        if(this.state.amountToStake > this.state.tokenBalance){
-            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.errorInsufficientFunds" />, {
-                variant: 'error',
-                anchorOrigin: {
-                    vertical: 'bottom',
-                    horizontal: 'left',
-                },
-            });
-            return
-        }
+        });
 
 
-        
-        this.activateStake(); 
     }
 
 
@@ -256,8 +259,8 @@ class StakingForm extends Component{
         }).catch( (err) => {
             console.log("Unable to stake; " + err)
             this.setState({loading: false})
-            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.unableToStake" />, {
-                variant: 'error',
+            this.props.enqueueSnackbar(<Trans i18nKey="staking_form.stakingPending" />, {
+                variant: 'warning',
                 anchorOrigin: {
                     vertical: 'bottom',
                     horizontal: 'left',

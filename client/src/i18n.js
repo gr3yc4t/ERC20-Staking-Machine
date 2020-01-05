@@ -18,7 +18,9 @@ i18n.use(LanguageDetector).init({
           errorInsufficientFunds: "Insufficient funds",
           errorNoAllowance: "Set the allowance first",
           unableToStake: "Unable to stake",
-          correctStake: "Successful stake"
+          correctStake: "Successful stake",
+          stakingPending: "Request sent, check the transaction status"
+
 
         },
         sideMenu: {
@@ -115,7 +117,8 @@ i18n.use(LanguageDetector).init({
             errorInsufficientFunds: "Fondi insufficienti",
             errorNoAllowance: "Approvazione non abilitata",
             unableToStake: "Impossibile effettuare lo stake",
-            correctStake: "Stake effetuato con successo"
+            correctStake: "Stake effetuato con successo",
+            stakingPending: "Richiesta inviata, controllare lo stato della transazione"
 
           },
           sideMenu: {

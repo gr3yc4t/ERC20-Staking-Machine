@@ -80,7 +80,7 @@ class App extends Component {
 
     //this.stakingAddress = "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550"
     //Mainnet
-    this.stakingAddress = "0xff0a847CAeB76d923a5f1A9c4efaB2BEB5eD7323"
+    this.stakingAddress = "0x6d9F3Cd627a5c9a65b3a5A6C94F061ef6cA43002"
 
 
     this.openMenuCallback = this.openMenuCallback.bind(this)

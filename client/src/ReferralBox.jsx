@@ -111,7 +111,7 @@ class ReferralBox extends Component{
             return;
         }
 
-        /*
+        
         this.state.contractInstance.methods.getLowestStake(this.state.referrals[0]).call().then( (rawResult) => {
             console.log("Lowest stake:")
             console.log(rawResult)
@@ -119,7 +119,7 @@ class ReferralBox extends Component{
         }).catch( (err) => {
             console.log(err)
         });
-        */
+        
 
     }
 
