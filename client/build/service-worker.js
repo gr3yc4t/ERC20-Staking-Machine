@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/ERC20-Staking-Machine/client/build/precache-manifest.295f9e85a72747ef42e4083302a49063.js"
+  "/ERC20-Staking-Machine/client/build/precache-manifest.841999d63e97af8717336719d185cf61.js"
 );
 
 self.addEventListener('message', (event) => {
