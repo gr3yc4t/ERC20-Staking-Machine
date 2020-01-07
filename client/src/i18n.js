@@ -47,7 +47,9 @@ i18n.use(LanguageDetector).init({
           availableReward: "Available Reward",
           totalAvailavelReward: "Total Reward available",
           withdrawAll: "Withdraw All",
-          noReferral: "No referral found"
+          noReferral: "No referral found",
+          copyButton: "Copy",
+          copyMessage: "Referral code copied into clipboard"
         },
         stake_detail: {
           previewText: "Amount staked",
@@ -144,7 +146,9 @@ i18n.use(LanguageDetector).init({
             availableReward: "Premio disponibile",
             totalAvailavelReward: "Premio totale",
             withdrawAll: "Preleva premio",
-            noReferral: "Nessun referral trovato"
+            noReferral: "Nessun referral trovato",
+            copyButton: "Copia",
+            copyMessage: "Referral copiato negli appunti"
           },
           stake_detail: {
             previewText: "Token in stake",

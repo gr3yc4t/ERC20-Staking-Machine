@@ -21,6 +21,7 @@ import ViewListIcon from '@material-ui/icons/ViewList';
 
 import { translate, Trans } from "react-i18next";
 
+import Grow from '@material-ui/core/Grow'
 
 
 import PropTypes from 'prop-types';
@@ -279,51 +280,53 @@ class StakingLister extends Component{
 
 
         return (
-            <Paper 
-            elevation={4}
-            style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
-            >  
-                <Grid
-                    container
-                    spacing={1}
-                    direction="column"
-                    justify="center"
-                    alignItems="center"
-                >
-                    <Grid item>
-                        <Grid container direction="row" alignItems="center">
-                            <ViewListIcon />
-                            <Typography variant="h4" component="h4"><Trans i18nKey="staking_list.title" /></Typography>
+            <Grow in={true}>
+                <Paper 
+                elevation={4}
+                style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
+                >  
+                    <Grid
+                        container
+                        spacing={1}
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        <Grid item>
+                            <Grid container direction="row" alignItems="center">
+                                <ViewListIcon />
+                                <Typography variant="h4" component="h4"><Trans i18nKey="staking_list.title" /></Typography>
+                            </Grid>
+                        </Grid>
+                        <Grid item>
+                            {this.state.referralLoaded & this.state.numberOfActiveStake !== -1 && (
+                                <AccountInfo
+                                stakeNumber={this.state.numberOfActiveStake}
+                                amountStaked={this.state.totalAmountStaked}
+                                referral={this.state.referral}
+                                tokenDecimals={this.state.tokenDecimals}
+                                ></AccountInfo>
+                            )}
+
+                            <Trans i18nKey="staking_list.showArchived" />
+                            <Switch
+                                checked={this.state.showArchived}
+                                onChange={this.handleShowArchived}
+                                value={this.state.showArchived}
+                                //inputProps={{ 'aria-label': 'secondary checkbox' }}
+                                className={classes.archivedSwitch}
+                            />               
+                        </Grid>
+                        <Grid item>
+                            {this.state.stakingList === "" ? (
+                                <Typography color="textSecondary"><Trans i18nKey="staking_list.noStakePresent" /></Typography>
+                            ): (
+                                this.state.stakingList
+                            )}
                         </Grid>
                     </Grid>
-                    <Grid item>
-                        {this.state.referralLoaded & this.state.numberOfActiveStake !== -1 && (
-                            <AccountInfo
-                            stakeNumber={this.state.numberOfActiveStake}
-                            amountStaked={this.state.totalAmountStaked}
-                            referral={this.state.referral}
-                            tokenDecimals={this.state.tokenDecimals}
-                            ></AccountInfo>
-                        )}
-
-                        <Trans i18nKey="staking_list.showArchived" />
-                        <Switch
-                            checked={this.state.showArchived}
-                            onChange={this.handleShowArchived}
-                            value={this.state.showArchived}
-                            //inputProps={{ 'aria-label': 'secondary checkbox' }}
-                            className={classes.archivedSwitch}
-                        />               
-                    </Grid>
-                    <Grid item>
-                        {this.state.stakingList === "" ? (
-                            <Typography color="textSecondary"><Trans i18nKey="staking_list.noStakePresent" /></Typography>
-                        ): (
-                            this.state.stakingList
-                        )}
-                    </Grid>
-                </Grid>
-            </Paper>
+                </Paper>
+            </Grow>
         );
 
     }

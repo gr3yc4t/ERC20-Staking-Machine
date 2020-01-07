@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@material-ui/core/Checkbox';
 import InputAdornment from '@material-ui/core/InputAdornment';
+import Grow from '@material-ui/core/Grow'
 
 
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -330,7 +331,7 @@ class StakingForm extends Component{
         */
 
         return (
-            <div>
+            <Grow in={true}>
                 <Grid
                     container
                     spacing={1}
@@ -395,7 +396,7 @@ class StakingForm extends Component{
                             </Button>
                     </Grid>
                 </Grid>
-            </div>
+            </Grow>
         );
 
     }

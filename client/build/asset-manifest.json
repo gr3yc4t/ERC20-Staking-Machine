@@ -1,26 +1,26 @@
 {
   "files": {
     "main.css": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css",
-    "main.js": "/ERC20-Staking-Machine/client/build/static/js/main.1a7296a3.chunk.js",
-    "main.js.map": "/ERC20-Staking-Machine/client/build/static/js/main.1a7296a3.chunk.js.map",
+    "main.js": "/ERC20-Staking-Machine/client/build/static/js/main.c1049082.chunk.js",
+    "main.js.map": "/ERC20-Staking-Machine/client/build/static/js/main.c1049082.chunk.js.map",
     "runtime-main.js": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js",
     "runtime-main.js.map": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js.map",
     "static/css/2.e4d87476.chunk.css": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css",
-    "static/js/2.081a8e3c.chunk.js": "/ERC20-Staking-Machine/client/build/static/js/2.081a8e3c.chunk.js",
-    "static/js/2.081a8e3c.chunk.js.map": "/ERC20-Staking-Machine/client/build/static/js/2.081a8e3c.chunk.js.map",
+    "static/js/2.3732bc9a.chunk.js": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js",
+    "static/js/2.3732bc9a.chunk.js.map": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js.map",
     "index.html": "/ERC20-Staking-Machine/client/build/index.html",
-    "precache-manifest.841999d63e97af8717336719d185cf61.js": "/ERC20-Staking-Machine/client/build/precache-manifest.841999d63e97af8717336719d185cf61.js",
+    "precache-manifest.cfc3f64d61d49af007b117ffb7f2d85e.js": "/ERC20-Staking-Machine/client/build/precache-manifest.cfc3f64d61d49af007b117ffb7f2d85e.js",
     "service-worker.js": "/ERC20-Staking-Machine/client/build/service-worker.js",
     "static/css/2.e4d87476.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css.map",
     "static/css/main.68a98085.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css.map",
-    "static/js/2.081a8e3c.chunk.js.LICENSE": "/ERC20-Staking-Machine/client/build/static/js/2.081a8e3c.chunk.js.LICENSE",
+    "static/js/2.3732bc9a.chunk.js.LICENSE": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js.LICENSE",
     "static/media/index.css": "/ERC20-Staking-Machine/client/build/static/media/roboto-latin-900italic.ebf6d164.woff2"
   },
   "entrypoints": [
     "static/js/runtime-main.6cd7f9c1.js",
     "static/css/2.e4d87476.chunk.css",
-    "static/js/2.081a8e3c.chunk.js",
+    "static/js/2.3732bc9a.chunk.js",
     "static/css/main.68a98085.chunk.css",
-    "static/js/main.1a7296a3.chunk.js"
+    "static/js/main.c1049082.chunk.js"
   ]
 }

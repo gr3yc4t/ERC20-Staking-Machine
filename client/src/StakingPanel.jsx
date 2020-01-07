@@ -15,6 +15,7 @@ import TokenContext from './TokenContext'
 import ApproveInfo from "./ApproveInfo"
 
 import { translate, Trans } from "react-i18next";
+import Grow from '@material-ui/core/Grow'
 
 
 
@@ -73,53 +74,55 @@ class StakingPanel extends Component{
         console.log(this.state.subscriptionEnded)
 
         return (
-            <Paper 
-                elevation={4}
-                style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
-            >  
-                <Grid
-                    container
-                    spacing={1}
-                    direction="column"
-                    justify="center"
-                    alignItems="center"
-                >
-                    {!this.state.subscriptionEnded ? (
-                        <div>
-                        <Grid item>  
-                            <Typography color="textPrimary" variant="h4"><Trans i18nKey="staking_form.title" /></Typography>
-                            <Typography color="textSecondary">
-                                <Trans i18nKey="staking_form.subtitle" />
-                            </Typography>
-                            <ApproveInfo></ApproveInfo>
-                        </Grid>
-                        <Grid item>
-                            <TokenContext.Consumer>
-                                        {context => (
-                                            <StakingForm 
-                                                tokenAddress={context.address}
-                                                tokenName={context.name}
-                                                tokenSymbol={context.symbol}
-                                                tokenInstance={context.instance}
-                                                stakingAddress={this.state.stakingAddress}
-                                                web3={context.web3}
-                                                contractInstance={this.state.contractInterface} 
-                                                account={this.state.account}
-                                                newStakeHandler={this.newStakeHandler}
-                                                tokenDecimals={context.decimals}>
-                                            </StakingForm>
-                                        )}
-                            </TokenContext.Consumer>
-                        </Grid>
-                        </div>
-                    ) : (
-                        <div>
-                            <Typography>Subscription ended</Typography>
-                        </div>
-                    )}
+            <Grow in={true}>
+                <Paper 
+                    elevation={4}
+                    style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
+                >  
+                    <Grid
+                        container
+                        spacing={1}
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        {!this.state.subscriptionEnded ? (
+                            <div>
+                            <Grid item>  
+                                <Typography color="textPrimary" variant="h4"><Trans i18nKey="staking_form.title" /></Typography>
+                                <Typography color="textSecondary">
+                                    <Trans i18nKey="staking_form.subtitle" />
+                                </Typography>
+                                <ApproveInfo></ApproveInfo>
+                            </Grid>
+                            <Grid item>
+                                <TokenContext.Consumer>
+                                            {context => (
+                                                <StakingForm 
+                                                    tokenAddress={context.address}
+                                                    tokenName={context.name}
+                                                    tokenSymbol={context.symbol}
+                                                    tokenInstance={context.instance}
+                                                    stakingAddress={this.state.stakingAddress}
+                                                    web3={context.web3}
+                                                    contractInstance={this.state.contractInterface} 
+                                                    account={this.state.account}
+                                                    newStakeHandler={this.newStakeHandler}
+                                                    tokenDecimals={context.decimals}>
+                                                </StakingForm>
+                                            )}
+                                </TokenContext.Consumer>
+                            </Grid>
+                            </div>
+                        ) : (
+                            <div>
+                                <Typography>Subscription ended</Typography>
+                            </div>
+                        )}
 
-                </Grid>
-            </Paper>
+                    </Grid>
+                </Paper>
+            </Grow>
         );
 
     }

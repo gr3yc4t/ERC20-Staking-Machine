@@ -103,7 +103,7 @@ class StakeInfo extends Component{
                             {this.state.hasReferral ? (
                                 <TextField value={this.state.referral}></TextField>
                             ) : (
-                                <b>No</b>
+                                <b> No</b>
                             )}
 
                         </Typography>

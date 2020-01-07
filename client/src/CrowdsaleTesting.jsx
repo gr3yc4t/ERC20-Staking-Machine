@@ -94,7 +94,7 @@ class CrowdsaleTesting extends React.Component{
                     <Typography variant="h5">Rate testing area</Typography>
                 </Grid>
                 <Grid item>
-                    <TextField label="Custom rate in gwei" value={this.state.currentRate} onChange={this.handleRateChange}></TextField>
+                    <TextField label="Custom rate in wei" value={this.state.currentRate} onChange={this.handleRateChange}></TextField>
                 </Grid>
                 <Grid item>
                     <TextField label="Amount of BITN" onChange={this.handleBITNChange} value={this.state.amountOfBITN}></TextField>

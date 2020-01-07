@@ -12,10 +12,14 @@ import CircularProgress from '@material-ui/core/CircularProgress'
 
 import BigNumber from "big-number"
 
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
+
 import ReferralEntry from './ReferralEntry'
 
 import GetAppIcon from '@material-ui/icons/GetApp';
 
+import Grow from '@material-ui/core/Grow'
 
 import { Trans } from "react-i18next";
 
@@ -23,6 +27,7 @@ import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import { TextField } from "@material-ui/core";
 
+import { withSnackbar } from 'notistack';
 
 
 class ReferralBox extends Component{
@@ -164,68 +169,90 @@ class ReferralBox extends Component{
     render(){
 
         return (
-            <Paper 
-                elevation={4}
-                style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
-            >  
-                <Grid
-                    container
-                    spacing={1}
-                    direction="column"
-                    justify="center"
-                    alignItems="center"
-                >
-                    <Grid item>
-                        <Typography variant="h4" component="h4">Referrals</Typography>
-                    </Grid>
-                    <Grid item>
-                        <Typography><Trans i18nKey="referral_panel.myReferralLabel" />: <TextField value={this.state.account}></TextField></Typography>
-                    </Grid>
-                        {this.state.referrals !== null ? (
-                            <div>
-                                <Grid item>
-                                    {!this.state.loading ? (
-                                        this.referral_list = this.state.referrals.map( (ref_address) => 
-                                        <ListItem button>
-                                            <ReferralEntry
-                                                contractInstance={this.state.contractInstance}
-                                                account={this.state.account}
-                                                tokenDecimals={this.state.tokenDecimals}
-                                                referredAddress={ref_address}
-                                            >
-                                            </ReferralEntry>
-                                        </ListItem>
-                                        )
-                                    ) : (
-                                        <CircularProgress />
-                                    )}
-                                    <List component="nav">
+            <Grow in={true}>
+                <Paper 
+                    elevation={4}
+                    style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
+                >  
+                    <Grid
+                        container
+                        spacing={1}
+                        direction="column"
+                        justify="center"
+                        alignItems="center"
+                    >
+                        <Grid item>
+                            <Typography variant="h4" component="h4">Referrals</Typography>
+                        </Grid>
+                        <Grid item>
+                            <Typography><Trans i18nKey="referral_panel.myReferralLabel" />: </Typography>
+                        </Grid>
+                        <Grid item>
+                            <TextField value={this.state.account}></TextField>
+                        </Grid>
+                        <Grid item>
+                            <CopyToClipboard
+                                text={this.state.account}
+                                onCopy={() => {
+                                    this.props.enqueueSnackbar(<Trans i18nKey="referral_panel.copyMessage" />, {
+                                        variant: 'info',
+                                        anchorOrigin: {
+                                            vertical: 'bottom',
+                                            horizontal: 'left',
+                                        },
+                                    });
+                                }}
+                            > 
+                                <Button variant="outlined"><Trans i18nKey="referral_panel.copyButton" /></Button>
+                            </CopyToClipboard>
+                            
+                        </Grid>
+                            {this.state.referrals !== null ? (
+                                <div>
+                                    <Grid item>
+                                        {!this.state.loading ? (
+                                            this.referral_list = this.state.referrals.map( (ref_address) => 
+                                            <ListItem button>
+                                                <ReferralEntry
+                                                    contractInstance={this.state.contractInstance}
+                                                    account={this.state.account}
+                                                    tokenDecimals={this.state.tokenDecimals}
+                                                    referredAddress={ref_address}
+                                                >
+                                                </ReferralEntry>
+                                            </ListItem>
+                                            )
+                                        ) : (
+                                            <CircularProgress />
+                                        )}
+                                        <List component="nav">
 
-                                    </List>
-                                </Grid>
+                                        </List>
+                                    </Grid>
+                                    <Grid item>
+                                        <Typography><Trans i18nKey="referral_panel.totalAvailavelReward" />: <b>{this.state.viewReferralReward}</b></Typography>
+                                    </Grid>
+                                    <Grid item>
+                                        <Button 
+                                            onClick={this.withdrawReferralReward}
+                                            variant="contained" 
+                                            color="primary"
+                                            startIcon={<GetAppIcon />}
+                                        >
+                                            <Trans i18nKey="referral_panel.withdrawAll" />
+                                        </Button>
+                                    </Grid>
+                                </div>
+                            ): (
                                 <Grid item>
-                                    <Typography><Trans i18nKey="referral_panel.totalAvailavelReward" />: <b>{this.state.viewReferralReward}</b></Typography>
+                                    <Typography color="error"><ErrorOutlineIcon></ErrorOutlineIcon></Typography>
+                                    <Typography color="error"><Trans i18nKey="referral_panel.noReferral" /></Typography>
                                 </Grid>
-                                <Grid item>
-                                    <Button 
-                                        onClick={this.withdrawReferralReward}
-                                        variant="contained" 
-                                        color="primary"
-                                        startIcon={<GetAppIcon />}
-                                    >
-                                        <Trans i18nKey="referral_panel.withdrawAll" />
-                                    </Button>
-                                </Grid>
-                            </div>
-                        ): (
-                            <Grid item>
-                                <Typography color="error"><ErrorOutlineIcon></ErrorOutlineIcon></Typography>
-                                <Typography color="error"><Trans i18nKey="referral_panel.noReferral" /></Typography>
-                            </Grid>
-                        )}
+                            )}
 
-                </Grid>
-            </Paper>
+                    </Grid>
+                </Paper>
+            </Grow>
         );
 
     }
@@ -234,4 +261,4 @@ class ReferralBox extends Component{
 }
 
 
-export default ReferralBox;
+export default withSnackbar(ReferralBox);

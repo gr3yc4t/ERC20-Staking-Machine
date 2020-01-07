@@ -92,11 +92,14 @@ class CrowdsaleOwnerPanel extends React.Component{
     async getAvailableBalance(){
         this.state.crowdsaleInstance.getAvailableToken.call().then( (res) => {
 
-            console.log("Available token: " + res.toString())
+            let realAmount = this.state.web3.utils.fromWei(res)
+
+            this.setState({
+                availableBalance: realAmount.toString()
+            })
 
         });
     }
-
 
 
     handleSetRate(event){
@@ -107,7 +110,7 @@ class CrowdsaleOwnerPanel extends React.Component{
         this.state.web3.eth.getAccounts().then( (account) => {
 
             //this.state.crowdsaleInstance.setRate(this.state.web3.utils.toBN(this.state.newRate).toString(), {from: account[0]}).then( (res) => {
-                this.state.crowdsaleInstance.setRate(this.state.web3.utils.toWei(this.state.newRate, "wei"), {from: account[0]}).then( (res) => {
+            this.state.crowdsaleInstance.setRate(this.state.web3.utils.toWei(this.state.newRate, "wei"), {from: account[0]}).then( (res) => {
             
             console.log(res)
                 this.getCurrentRate();
@@ -156,12 +159,17 @@ class CrowdsaleOwnerPanel extends React.Component{
                         <Typography variant="h4">Crowdsale Settings</Typography>
                     </Grid>
                     <Grid item>
-                        <Typography>Current exchange rate: {this.state.currentRate} wei</Typography>
+                        <Typography>Current exchange rate: <b>{this.state.currentRate}</b> wei</Typography>
+                    </Grid>
+                    <Grid item>
+                        <Typography>Current exchange liquidity: <b>{this.state.availableBalance}</b></Typography>
                     </Grid>
                     <Grid item>
                         <Typography>Set new rate:</Typography>
                         <TextField value={this.state.newRate} onChange={this.handleChange}></TextField>
-                        <Button onClick={this.handleSetRate}>Set Rate</Button>
+                    </Grid>
+                    <Grid item>
+                        <Button onClick={this.handleSetRate} variant="contained" color="primary">Set Rate</Button>
                     </Grid>
                     <Grid item>
                         <CrowdsaleTesting web3={this.state.web3} />

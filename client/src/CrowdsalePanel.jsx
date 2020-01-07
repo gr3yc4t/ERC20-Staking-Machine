@@ -6,6 +6,7 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid'
 
 import { Trans } from "react-i18next";
+import Grow from '@material-ui/core/Grow'
 
 
 import getWeb3 from "./utils/getWeb3";
@@ -208,6 +209,7 @@ class CrowdsalePanel extends React.Component{
 
 
         return(
+            <Grow in={true}>
             <Paper 
                 elevation={4}
                 style={{ padding: 20, margin: 0, backgroundColor: '#fafafa' }}
@@ -260,6 +262,7 @@ class CrowdsalePanel extends React.Component{
 
                 </Grid>
             </Paper>
+            </Grow>
         )
     }
 

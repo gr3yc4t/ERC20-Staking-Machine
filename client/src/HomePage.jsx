@@ -8,7 +8,8 @@ import Grid from '@material-ui/core/Grid'
 import Paper from '@material-ui/core/Paper'
 import Grow from '@material-ui/core/Grow'
 import Avatar from '@material-ui/core/Avatar'
-import { Link } from '@material-ui/core';
+//import { Link } from '@material-ui/core';
+import { Link } from 'react-router-dom'
 
 import BigNumber from "big-number"
 
@@ -83,11 +84,22 @@ class HomePage extends Component {
                                 </Grid>
                                 <Grid item>
                                     <Typography><Trans i18nKey="HomePage.stakeToken" /></Typography>
-                                    <Button variant="outlined" component={Link} to="/staking-form"><Trans i18nKey="HomePage.goStaking" /></Button>
+                                    <Button 
+                                        variant="outlined" 
+                                        component={Link} to="/staking-form"
+                                        style={{color: "#303f9f"}}
+                                        >
+                                            <Trans i18nKey="HomePage.goStaking" />
+                                        </Button>
                                 </Grid>
                                 <Grid item>
                                     <Typography><Trans i18nKey="HomePage.needToken" /></Typography>
-                                    <Button variant="outlined" component={Link} to="/staking-form"><Trans i18nKey="HomePage.goCrowdsale" /></Button>
+                                    <Button     
+                                        variant="outlined" 
+                                        component={Link} to="/crowdsale"
+                                        style={{color: "#303f9f"}}
+                                        ><Trans i18nKey="HomePage.goCrowdsale" />
+                                    </Button>
                                 </Grid>
                         </Grid>
                 </Paper>
