@@ -152,11 +152,11 @@ class UserBox extends Component{
                         <List>
                             <ListItem >
                                 <Avatar alt="logo" src="https://www.bitcoincompany.it/wp-content/uploads/2019/08/BITN-Token-RGB-256x256.png" style={{margin:10}} />
-                                <ListItemText primary={"Staking Machine"} />
+                                <ListItemText primary={<Trans i18nKey="sideMenu.menuTitle" />} />
                             </ListItem>
                             <ListItem button component={Link} to="/" onClick={this.toggleDrawer('', false)}>
                                 <ListItemIcon><HomeIcon /></ListItemIcon>
-                                <ListItemText primary={"Home"} />
+                                <ListItemText primary={<Trans i18nKey="sideMenu.homeEntry" />} />
                             </ListItem>
                             <ListItem button component={Link} to="/staking-form" onClick={this.toggleDrawer('', false)}>
                                 <ListItemIcon><HowToVoteIcon /></ListItemIcon>
@@ -173,7 +173,7 @@ class UserBox extends Component{
                             <Divider />
                             <ListItem button component={Link} to="/crowdsale" onClick={this.toggleDrawer('', false)}>
                                 <ListItemIcon><ShoppingCartIcon /></ListItemIcon>
-                                <ListItemText primary={"Crowdsale"} />
+                                <ListItemText primary={<Trans i18nKey="sideMenu.crowdsaleEntry" />} />
                             </ListItem>
                             <Divider />
                             <ListItem>
@@ -202,7 +202,7 @@ class UserBox extends Component{
                             <Divider />
                             <ListItem button onClick={this.toggleDrawer(null, false)}>
                                 <ListItemIcon><InboxIcon /></ListItemIcon>
-                                <ListItemText primary={"Close"} />
+                                <ListItemText primary={<Trans i18nKey="sideMenu.closeEntry" />} />
                             </ListItem>
                         </List>
                     </SwipeableDrawer>

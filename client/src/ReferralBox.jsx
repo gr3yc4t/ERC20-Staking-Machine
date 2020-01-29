@@ -182,7 +182,7 @@ class ReferralBox extends Component{
                         alignItems="center"
                     >
                         <Grid item>
-                            <Typography variant="h4" component="h4">Referrals</Typography>
+                            <Typography variant="h4" component="h4"><Trans i18nKey="referral_panel.referralTitle" /></Typography>
                         </Grid>
                         <Grid item>
                             <Typography><Trans i18nKey="referral_panel.myReferralLabel" />: </Typography>

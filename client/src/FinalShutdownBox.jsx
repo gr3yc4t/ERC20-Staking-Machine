@@ -29,15 +29,26 @@ class FinalShutdownBox extends Component{
             account: this.props.account,
             stakingAddress: props.stakingAddress,
             loading: false,
+            newOwner: "",
+            potToReturn: 0
         }
 
         this.web3 = props.web3
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.transerOwnership = this.transerOwnership.bind(this);
+        this.handleChangeOwner = this.handleChangeOwner.bind(this)
+
+        this.handlePotChange = this.handlePotChange.bind(this);
+        this.handleReturnPot = this.handleReturnPot.bind(this);
 
     }
 
 
     componentDidMount(){
+
+        this.setState({
+            newOwner: ""
+        })
 
     }
 
@@ -75,9 +86,81 @@ class FinalShutdownBox extends Component{
 
 
 
+    transerOwnership(){
+        this.state.contractInterface.methods.transferOwnership(this.state.newOwner).send({ from: this.state.account }).then((result) =>{
+            console.log(result)
+            
+  
+
+        }).catch( (err) =>{
+            console.log(err)
+            this.props.enqueueSnackbar("Unable to transfer ownership", {
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+        });
+    }
+
+
+    handleChangeOwner(event){
+        var newAddress = event.target.value
+
+
+        this.setState({
+            newOwner: newAddress
+        }, () => {
+            console.log(this.state.newOwner)
+        })
+
+    }
+
+
     handleSubmit(event){
         event.preventDefault();
         this.finalShutdown();
+    }
+
+
+    handlePotChange(event){
+        var potValue = event.target.value;
+
+        this.setState({
+            potToReturn: potValue
+        }, () => {
+            console.log(this.state.potToReturn)
+        })
+
+    }
+
+
+    handleReturnPot(event){
+        event.preventDefault();
+
+
+        this.state.contractInterface.methods.returnPot(this.state.potToReturn).send({ from: this.state.account }).then((result) =>{
+            console.log(result)
+            this.props.enqueueSnackbar("Pot returned", {
+                variant: 'info',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+
+        }).catch( (err) =>{
+            console.log(err)
+            this.props.enqueueSnackbar("Unable to withdraw from pot", {
+                variant: 'error',
+                anchorOrigin: {
+                    vertical: 'bottom',
+                    horizontal: 'left',
+                },
+            });
+        });
+
     }
 
 
@@ -103,6 +186,19 @@ class FinalShutdownBox extends Component{
                                 </Grid>
                                 <Grid item>
                                     <Button variant="contained" color="secondary" onClick={this.handleSubmit}>Final Shutdown</Button>
+                                </Grid>
+                                <Grid item>
+                                    <TextField value={this.state.newOwner} onChange={this.handleChangeOwner}></TextField>
+                                </Grid>
+                                <Grid item>
+                                    <Button variant="contained" color="primary" onClick={this.transerOwnership}>Transfer Ownership</Button>
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="body1" component="h3">Chose the amount to withdraw from the pot</Typography>
+                                    <TextField value={this.state.potToReturn} onChange={this.handlePotChange}></TextField>
+                                </Grid>
+                                <Grid item>
+                                    <Button variant="contained" color="secondary" onClick={this.handleReturnPot}>Return Pot</Button>
                                 </Grid>
                         </Grid>
                             

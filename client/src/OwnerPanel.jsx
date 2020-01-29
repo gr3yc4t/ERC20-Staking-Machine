@@ -86,8 +86,9 @@ class OwnerBox extends Component{
                             <CrowdsaleOwnerPanel
                                 web3={this.state.web3}
                                 accounts={this.state.accounts}
-                            >  
+                                >  
                             </CrowdsaleOwnerPanel>
+
                         </Grid>
                         <Grid item>
 

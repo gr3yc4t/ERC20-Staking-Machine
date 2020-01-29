@@ -32,7 +32,8 @@ class CrowdsaleOwnerPanel extends React.Component{
             amountOfBITN: 0,
             amountOfWEI: 0,
             amountOfETH: 0,
-            priceData: null
+            priceData: null,
+            newOwner: ""
         }
 
 
@@ -43,6 +44,8 @@ class CrowdsaleOwnerPanel extends React.Component{
 
         this.handleChange= this.handleChange.bind(this)
         this.handleSetRate = this.handleSetRate.bind(this)
+        this.handleChangeOwner = this.handleChangeOwner.bind(this)
+        this.changeOwner = this.changeOwner.bind(this)
     }
 
 
@@ -132,9 +135,33 @@ class CrowdsaleOwnerPanel extends React.Component{
     }
 
 
+    handleChangeOwner(event){
+        this.setState({
+            newOwner: event.target.value
+        }, () => {
+            console.log(this.state.newOwner)
+        })
+    }
+
+
+    changeOwner(){
+
+        this.state.web3.eth.getAccounts().then( (account) => {
+
+            //this.state.crowdsaleInstance.setRate(this.state.web3.utils.toBN(this.state.newRate).toString(), {from: account[0]}).then( (res) => {
+            this.state.crowdsaleInstance.transferOwnership(this.state.newOwner, {from: account[0]}).then( (res) => {
+            
+                console.log(res)
+                
+            }).catch( (err) => {
+                console.log(err)
+            })
 
 
 
+        })        
+
+    }
 
 
     render(){
@@ -173,6 +200,10 @@ class CrowdsaleOwnerPanel extends React.Component{
                     </Grid>
                     <Grid item>
                         <CrowdsaleTesting web3={this.state.web3} />
+                    </Grid>
+                    <Grid item>
+                        <TextField value={this.state.newOwner} onChange={this.handleChangeOwner} />
+                        <Button onClick={this.changeOwner}>Change Owner</Button>
                     </Grid>
                 </Grid>
             </Paper>

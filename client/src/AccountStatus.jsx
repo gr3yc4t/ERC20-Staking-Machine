@@ -5,6 +5,7 @@ import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid'
+import { Trans } from "react-i18next";
 
 
 import BigNumber from "big-number"
@@ -54,7 +55,7 @@ class AccountStatus extends Component {
         return (
             <Grid container>
                 <Grid item>
-                    <Typography>Token Balance: <b>{this.state.tokenBalance}</b></Typography>
+                    <Typography><Trans i18nKey="HomePage.tokenBalance" />: <b>{this.state.tokenBalance}</b></Typography>
                 </Grid>
             </Grid>
         );

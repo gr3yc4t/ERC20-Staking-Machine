@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css",
-    "main.js": "/ERC20-Staking-Machine/client/build/static/js/main.c1049082.chunk.js",
-    "main.js.map": "/ERC20-Staking-Machine/client/build/static/js/main.c1049082.chunk.js.map",
-    "runtime-main.js": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js",
-    "runtime-main.js.map": "/ERC20-Staking-Machine/client/build/static/js/runtime-main.6cd7f9c1.js.map",
-    "static/css/2.e4d87476.chunk.css": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css",
-    "static/js/2.3732bc9a.chunk.js": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js",
-    "static/js/2.3732bc9a.chunk.js.map": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js.map",
-    "index.html": "/ERC20-Staking-Machine/client/build/index.html",
-    "precache-manifest.cfc3f64d61d49af007b117ffb7f2d85e.js": "/ERC20-Staking-Machine/client/build/precache-manifest.cfc3f64d61d49af007b117ffb7f2d85e.js",
-    "service-worker.js": "/ERC20-Staking-Machine/client/build/service-worker.js",
-    "static/css/2.e4d87476.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/2.e4d87476.chunk.css.map",
-    "static/css/main.68a98085.chunk.css.map": "/ERC20-Staking-Machine/client/build/static/css/main.68a98085.chunk.css.map",
-    "static/js/2.3732bc9a.chunk.js.LICENSE": "/ERC20-Staking-Machine/client/build/static/js/2.3732bc9a.chunk.js.LICENSE",
-    "static/media/index.css": "/ERC20-Staking-Machine/client/build/static/media/roboto-latin-900italic.ebf6d164.woff2"
+    "main.css": "/staking-machine/static/css/main.68a98085.chunk.css",
+    "main.js": "/staking-machine/static/js/main.94d5ac45.chunk.js",
+    "main.js.map": "/staking-machine/static/js/main.94d5ac45.chunk.js.map",
+    "runtime-main.js": "/staking-machine/static/js/runtime-main.bfa96874.js",
+    "runtime-main.js.map": "/staking-machine/static/js/runtime-main.bfa96874.js.map",
+    "static/css/2.ffee7814.chunk.css": "/staking-machine/static/css/2.ffee7814.chunk.css",
+    "static/js/2.027d7dfd.chunk.js": "/staking-machine/static/js/2.027d7dfd.chunk.js",
+    "static/js/2.027d7dfd.chunk.js.map": "/staking-machine/static/js/2.027d7dfd.chunk.js.map",
+    "index.html": "/staking-machine/index.html",
+    "precache-manifest.f23e69b4d4391f6015e0b03aa1711fe8.js": "/staking-machine/precache-manifest.f23e69b4d4391f6015e0b03aa1711fe8.js",
+    "service-worker.js": "/staking-machine/service-worker.js",
+    "static/css/2.ffee7814.chunk.css.map": "/staking-machine/static/css/2.ffee7814.chunk.css.map",
+    "static/css/main.68a98085.chunk.css.map": "/staking-machine/static/css/main.68a98085.chunk.css.map",
+    "static/js/2.027d7dfd.chunk.js.LICENSE": "/staking-machine/static/js/2.027d7dfd.chunk.js.LICENSE",
+    "static/media/index.css": "/staking-machine/static/media/roboto-latin-900italic.ebf6d164.woff2"
   },
   "entrypoints": [
-    "static/js/runtime-main.6cd7f9c1.js",
-    "static/css/2.e4d87476.chunk.css",
-    "static/js/2.3732bc9a.chunk.js",
+    "static/js/runtime-main.bfa96874.js",
+    "static/css/2.ffee7814.chunk.css",
+    "static/js/2.027d7dfd.chunk.js",
     "static/css/main.68a98085.chunk.css",
-    "static/js/main.c1049082.chunk.js"
+    "static/js/main.94d5ac45.chunk.js"
   ]
 }

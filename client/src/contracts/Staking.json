@@ -52402,10 +52402,136 @@
       "links": {},
       "address": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
       "transactionHash": "0xf8b62212db660a0d5186e9fcc1f2b15070fc6fc98c82733d2b322e34374edd57"
+    },
+    "1578939756126": {
+      "events": {
+        "0x2ba2169cd2502a6cc4fd55f87f2dcbceef588b593aa4fdc883d4fc62e65ed6a9": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "newPot",
+              "type": "uint256"
+            }
+          ],
+          "name": "PotUpdated",
+          "type": "event",
+          "signature": "0x2ba2169cd2502a6cc4fd55f87f2dcbceef588b593aa4fdc883d4fc62e65ed6a9"
+        },
+        "0x67ed6f55aeca4bd969e4caf8ffe6d777edf0434bab6b87d04490ba3b9c9926b8": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "PotExhausted",
+          "type": "event",
+          "signature": "0x67ed6f55aeca4bd969e4caf8ffe6d777edf0434bab6b87d04490ba3b9c9926b8"
+        },
+        "0x1fb6e3d7cae02b590e0aeed7ed3fd02a558811be73cdea80d1b42a0970b8b81b": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "stakeAmount",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "from",
+              "type": "address"
+            }
+          ],
+          "name": "NewStake",
+          "type": "event",
+          "signature": "0x1fb6e3d7cae02b590e0aeed7ed3fd02a558811be73cdea80d1b42a0970b8b81b"
+        },
+        "0xa410544f83eadf8c1b5ed87c43259151da8c2dcaace26a8441a95e7770d7240a": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "stakeID",
+              "type": "uint256"
+            },
+            {
+              "indexed": false,
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "name": "StakeWithdraw",
+          "type": "event",
+          "signature": "0xa410544f83eadf8c1b5ed87c43259151da8c2dcaace26a8441a95e7770d7240a"
+        },
+        "0x61d4848e7db08e721dc597a2b0071f398c6a28b3715466955c21c7b5108d6d5c": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "account",
+              "type": "address"
+            },
+            {
+              "indexed": false,
+              "name": "reward",
+              "type": "uint256"
+            }
+          ],
+          "name": "referralRewardSent",
+          "type": "event",
+          "signature": "0x61d4848e7db08e721dc597a2b0071f398c6a28b3715466955c21c7b5108d6d5c"
+        },
+        "0xa4b06025edc86026e2c30cfa971a842c3c847db9729ad23b444e9c92ef5a26c8": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": false,
+              "name": "account",
+              "type": "address"
+            }
+          ],
+          "name": "rewardWithdrawed",
+          "type": "event",
+          "signature": "0xa4b06025edc86026e2c30cfa971a842c3c847db9729ad23b444e9c92ef5a26c8"
+        },
+        "0xb6b4eaf4a028babade23a64b362944d797f5721977d95459d8d5901a8182d124": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "machineStopped",
+          "type": "event",
+          "signature": "0xb6b4eaf4a028babade23a64b362944d797f5721977d95459d8d5901a8182d124"
+        },
+        "0x21d595ad783e8d22f1c99fc4e65168ac8eb4e492640ee3ee25acd136c2c49c9f": {
+          "anonymous": false,
+          "inputs": [],
+          "name": "subscriptionStopped",
+          "type": "event",
+          "signature": "0x21d595ad783e8d22f1c99fc4e65168ac8eb4e492640ee3ee25acd136c2c49c9f"
+        },
+        "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0": {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event",
+          "signature": "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0"
+        }
+      },
+      "links": {},
+      "address": "0xC89Ce4735882C9F0f0FE26686c53074E09B0D550",
+      "transactionHash": "0x456764a2a720e698239969376907d2fbd46101dfe016aea2085a931198fdb4b5"
     }
   },
   "schemaVersion": "3.0.16",
-  "updatedAt": "2020-01-05T15:30:31.122Z",
+  "updatedAt": "2020-01-13T18:23:47.364Z",
   "devdoc": {
     "methods": {
       "calculateRewardReferral(address)": {
