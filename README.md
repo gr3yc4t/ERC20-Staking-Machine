@@ -1,7 +1,7 @@
 # ERC20 Staking Machine
 Dapp that implements a "fake-stake" mechanism on any ERC20 token. The code is written specifically for a fixed-supply ERC20 token, but it can be easily extended also to ERC20 mintable token.
 
-A demo of the Dapp (branded for [Bitcoin&Company](https://www.bitcoincompany.it/)) can be found here ([demo](https://gr3yc4t.github.io/ERC20-Staking-Machine/client/build/))
+A demo of the Dapp (branded for [Bitcoin&Company](https://www.bitcoincompany.it/)) can be found here ([demo](https://gr3yc4t.github.io/ERC20-Staking-Machine/client/build/index.html))
 ## How does it work?
 Users can simulate the process of staking on any ERC20 token, earning rewards according to the number of periods they left their token into the platform.
 Just one level of referral is supported, and the corresponding interest can be customized.
