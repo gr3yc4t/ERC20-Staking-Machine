@@ -1,8 +1,8 @@
 {
   "name": "ERC20-Staking-Machine",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": true,
-  "homepage": "https://www.bitcoincompany.it/staking-machine/",
+  "homepage": "https://gr3yc4t.github.io/ERC20-Staking-Machine/client/build/",
   "dependencies": {
     "@material-ui/core": "^4.8.1",
     "@material-ui/icons": "^4.5.1",
